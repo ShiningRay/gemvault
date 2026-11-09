@@ -1,0 +1,11 @@
+# Crystal build artifacts
+/lib/
+/bin/
+/.shards/
+*.dwarf
+
+# Runtime data and local configuration
+/data/
+/tmp/
+.env
+*.local.yml

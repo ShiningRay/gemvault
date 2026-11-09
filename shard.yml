@@ -1,0 +1,13 @@
+name: gemvault
+version: 0.1.0
+
+authors:
+  - 代码之力 <9770+ShiningRay@users.noreply.github.com>
+
+targets:
+  gemvault:
+    main: src/cli.cr
+
+crystal: '>= 1.22.1'
+
+license: MIT

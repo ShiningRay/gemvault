@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: crystal-lang/install-crystal@v1
+        with:
+          crystal: 1.22.1
+      - name: Install locked dependencies
+        run: shards install --frozen
+      - name: Check formatting
+        run: crystal tool format --check src spec
+      - name: Run tests
+        run: crystal spec
+      - name: Build executable
+        run: crystal build src/cli.cr -o bin/gemvault
+      - name: Check CLI
+        run: bin/gemvault --check-config
