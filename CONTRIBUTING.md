@@ -12,7 +12,7 @@
 shards install
 crystal tool format --check src spec
 crystal spec
-crystal build src/cli.cr -o bin/gemvault
+shards build
 bin/gemvault --check-config
 ```
 

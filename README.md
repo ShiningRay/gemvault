@@ -57,7 +57,7 @@ crystal run src/cli.cr -- --check-config
 ```bash
 crystal tool format --check src spec
 crystal spec
-crystal build src/cli.cr -o bin/gemvault
+shards build
 ```
 
 ## 拟定使用方式（尚未实现）
